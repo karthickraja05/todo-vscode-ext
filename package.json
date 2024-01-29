@@ -13,8 +13,8 @@
   "main": "./extension.js",
   "contributes": {
     "commands": [{
-      "command": "todo-vscode-ext.helloWorld",
-      "title": "Hello World"
+      "command": "todo-vscode-ext.todo_app",
+      "title": "Todo App"
     }]
   },
   "scripts": {
