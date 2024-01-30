@@ -15,7 +15,32 @@
     "commands": [{
       "command": "todo-vscode-ext.todo_app",
       "title": "Todo App"
-    }]
+    }],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "package-explorer",
+          "title": "Package Explorer",
+          "icon": "resources/basura.svg"
+        }
+      ]
+    },
+    "views": {
+      "package-explorer": [
+        {
+          "id": "package-dependencies",
+          "name": "Welcom"
+        },
+        {
+          "id": "package-dependsencies",
+          "name": "Welcssom"
+        },
+        {
+          "id": "package-outline",
+          "name": "Todo"
+        }
+      ]
+    }
   },
   "scripts": {
     "lint": "eslint .",
