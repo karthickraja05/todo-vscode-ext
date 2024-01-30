@@ -1,94 +1,32 @@
 {
-  "name": "todo-vscode-ext",
-  "displayName": "todo-vscode-ext",
-  "description": "todo app",
+  "name": "cat-coding",
+  "description": "Cat Coding",
   "version": "0.0.1",
+  "publisher": "bierner",
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": [
-    "Other"
-  ],
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "todo-vscode-ext.todo_app",
-      "title": "Todo App"
-    }],
-    "viewsContainers": {
-      "activitybar": [
-        {
-          "id": "package-explorer",
-          "title": "Package Explorer",
-          "icon": "resources/basura.svg"
-        }
-      ]
-    },
-    "views": {
-      "package-explorer": [
-        {
-          "id": "package-dependencies",
-          "name": "Welcom"
-        },
-        {
-          "id": "package-dependsencies",
-          "name": "Welcssom"
-        },
-        {
-          "id": "package-outline",
-          "name": "Todo"
-        }
-      ]
-    },
-    "viewsWelcome": [
+    "commands": [
       {
-        "view": "package-outline",
-        "contents": "Test by me.\n[Open Folder](command:vscode.openFolder)\n[Clone Repository](command:git.clone)\nTo learn more about how to use git and source control in VS Code [read our docs](https://aka.ms/vscode-scm).",
-        "when": "config.git.enabled && git.state == initialized && workbenchState == empty"
+        "command": "catCoding.start",
+        "title": "Start new cat coding session",
+        "category": "Cat Coding"
       }
-    ],
-    "breakpoints": [
-      {
-        "language": "javascript"
-      },
-      {
-        "language": "javascriptreact"
-      }
-    ],
-    "colors": [
-      {
-        "id": "superstatus.error",
-        "description": "Color for error message in the status bar.",
-        "defaults": {
-          "dark": "errorForeground",
-          "light": "errorForeground",
-          "highContrast": "#0b72d9",
-          "highContrastLight": "#cca543"
-        }
-      }
-    ],
-    "menus": {
-      "commandPalette": [
-        {
-          "command": "todo-vscode-ext.todo_app",
-          "when": "editorLangId == markdown"
-        }
-      ]
-    }
+    ]
   },
   "scripts": {
-    "lint": "eslint .",
-    "pretest": "npm run lint",
-    "test": "vscode-test"
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "dependencies": {
+    "vscode": "*"
   },
   "devDependencies": {
-    "@types/vscode": "^1.85.0",
-    "@types/mocha": "^10.0.6",
-    "@types/node": "18.x",
-    "eslint": "^8.56.0",
-    "typescript": "^5.3.3",
-    "@vscode/test-cli": "^0.0.4",
-    "@vscode/test-electron": "^2.3.9"
+    "@types/node": "^9.4.6",
+    "typescript": "^2.8.3"
   }
 }
