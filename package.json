@@ -40,6 +40,41 @@
           "name": "Todo"
         }
       ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "package-outline",
+        "contents": "Test by me.\n[Open Folder](command:vscode.openFolder)\n[Clone Repository](command:git.clone)\nTo learn more about how to use git and source control in VS Code [read our docs](https://aka.ms/vscode-scm).",
+        "when": "config.git.enabled && git.state == initialized && workbenchState == empty"
+      }
+    ],
+    "breakpoints": [
+      {
+        "language": "javascript"
+      },
+      {
+        "language": "javascriptreact"
+      }
+    ],
+    "colors": [
+      {
+        "id": "superstatus.error",
+        "description": "Color for error message in the status bar.",
+        "defaults": {
+          "dark": "errorForeground",
+          "light": "errorForeground",
+          "highContrast": "#0b72d9",
+          "highContrastLight": "#cca543"
+        }
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "todo-vscode-ext.todo_app",
+          "when": "editorLangId == markdown"
+        }
+      ]
     }
   },
   "scripts": {
